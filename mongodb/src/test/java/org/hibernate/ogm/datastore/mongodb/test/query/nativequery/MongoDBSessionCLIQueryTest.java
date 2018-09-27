@@ -828,6 +828,19 @@ public class MongoDBSessionCLIQueryTest extends OgmTestCase {
 		} );
 	}
 
+    @Test
+    @TestForIssue(jiraKey = "OGM-1023")
+    public void testFindWithRegex() {
+        inTransaction( ( session ) -> {
+            String nativeQuery = "db." + OscarWildePoem.TABLE_NAME + ".find({'author': { '$regex': /^Oscar/ }})";
+            NativeQuery query = session.createNativeQuery( nativeQuery ).addEntity( OscarWildePoem.class );
+            @SuppressWarnings("unchecked")
+            List<OscarWildePoem> result = query.list();
+
+            assertThat( result ).hasSize( 3 );
+        } );
+    }
+
 	@Test
 	public void testFindWithNor() throws Exception {
 		inTransaction( ( session ) -> {
