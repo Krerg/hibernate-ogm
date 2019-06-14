@@ -101,6 +101,11 @@ public class MongoDBTestHelper extends BaseGridDialectTestHelper implements Grid
 		return associationCount;
 	}
 
+	@Override
+	public boolean backendSupportsTransactions() {
+		return true;
+	}
+
 	public long getNumberOfAssociationsFromGlobalCollection(SessionFactory sessionFactory) {
 		MongoDatabase db = getProvider( sessionFactory ).getDatabase();
 		return db.getCollection( MongoDBConfiguration.DEFAULT_ASSOCIATION_STORE ).count();
