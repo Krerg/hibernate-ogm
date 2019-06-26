@@ -10,7 +10,7 @@
         <properties>
             <!-- Here you will pick which NoSQL technology to use, and configure it;
                  in this example we start a local in-memory Infinispan node. -->
-            <property name="hibernate.ogm.datastore.provider" value="infinispan_embedded"/>
+            <property name="hibernate.ogm.datastore.provider" value="mongodb"/>
             <!-- The following is necessary because the example uses auto generated id and 
                  they are only supported in clustered mode -->
             <property name="hibernate.ogm.infinispan.configuration_resource_name" value="infinispan-dist.xml"/>

@@ -103,7 +103,7 @@ public class MongoDBTestHelper extends BaseGridDialectTestHelper implements Grid
 
 	@Override
 	public boolean backendSupportsTransactions() {
-		return true;
+		return false;
 	}
 
 	public long getNumberOfAssociationsFromGlobalCollection(SessionFactory sessionFactory) {

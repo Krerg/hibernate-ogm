@@ -1232,7 +1232,6 @@ public class MongoDBDialect extends BaseGridDialect implements QueryableGridDial
 
 			addModifier( modifiers, criteria, "$hint" );
 			addModifier( modifiers, criteria, "$maxScan" );
-			addModifier( modifiers, criteria, "$snapshot", false );
 			addModifier( modifiers, criteria, "$min" );
 			addModifier( modifiers, criteria, "$max" );
 			addModifier( modifiers, criteria, "$comment" );
